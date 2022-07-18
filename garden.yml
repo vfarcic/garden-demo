@@ -1,0 +1,4 @@
+kind: Module
+type: container
+name: app
+dockerfile: Dockerfile

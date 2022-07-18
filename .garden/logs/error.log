@@ -1,0 +1,1180 @@
+
+[2022-07-18T09:18:16.717Z] Error: Unable to connect to Kubernetes cluster. Got error:
+
+Error: self signed certificate in certificate chain
+    at Object.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+    at Generator.throw (<anonymous>)
+    at rejected (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+
+Error Details:
+
+providerConfig:
+  name: local-kubernetes
+  environments:
+    - local
+    - dev
+    - staging
+    - prod
+  dependencies: []
+  buildMode: local-docker
+  deploymentStrategy: rolling
+  forceSsl: false
+  gardenSystemNamespace: garden-system
+  imagePullSecrets: []
+  resources:
+    builder:
+      limits:
+        cpu: 4000
+        memory: 8192
+      requests:
+        cpu: 100
+        memory: 512
+    registry:
+      limits:
+        cpu: 2000
+        memory: 4096
+      requests:
+        cpu: 200
+        memory: 512
+    sync:
+      limits:
+        cpu: 500
+        memory: 512
+      requests:
+        cpu: 100
+        memory: 90
+  storage:
+    builder:
+      size: 20480
+      storageClass: null
+    nfs:
+      storageClass: null
+    registry:
+      size: 20480
+      storageClass: null
+    sync:
+      size: 10240
+      storageClass: null
+  tlsCertificates: []
+  systemNodeSelector: {}
+  registryProxyTolerations: []
+  setupIngressController: nginx
+  namespace:
+    name: garden-demo-my-app
+  ingressClass: nginx
+  context: docker-desktop
+  defaultHostname: garden-demo.local.app.garden
+  ingressHttpPort: 80
+  ingressHttpsPort: 443
+
+
+[2022-07-18T09:18:16.730Z] Error: Failed resolving one or more providers:
+- local-kubernetes
+    at Garden.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at runNextTicks (internal/process/task_queues.js:62:5)
+    at processImmediate (internal/timers.js:429:9)
+    at process.topLevelDomainCallback (domain.js:137:15)
+
+Error Details:
+
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: templated
+  - name: local-kubernetes
+    environments:
+      - local
+      - dev
+      - staging
+      - prod
+    dependencies: []
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2022-07-18T09:18:13.399Z'
+    batchId: dcd5e8e4-00d0-42ae-8dc5-2ee8b78161e7
+    output:
+      name: exec
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: exec
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:18:13.382Z'
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2022-07-18T09:18:13.394Z'
+    batchId: cf44f187-69bc-4f63-9707-e53c60e8dd6d
+    output:
+      name: container
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: container
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:18:13.383Z'
+  resolve-provider.local-kubernetes:
+    type: resolve-provider
+    description: resolving provider local-kubernetes
+    key: resolve-provider.local-kubernetes
+    name: local-kubernetes
+    error:
+      detail:
+        providerConfig:
+          name: local-kubernetes
+          environments:
+            - local
+            - dev
+            - staging
+            - prod
+          dependencies: []
+          buildMode: local-docker
+          deploymentStrategy: rolling
+          forceSsl: false
+          gardenSystemNamespace: garden-system
+          imagePullSecrets: []
+          resources:
+            builder:
+              limits:
+                cpu: 4000
+                memory: 8192
+              requests:
+                cpu: 100
+                memory: 512
+            registry:
+              limits:
+                cpu: 2000
+                memory: 4096
+              requests:
+                cpu: 200
+                memory: 512
+            sync:
+              limits:
+                cpu: 500
+                memory: 512
+              requests:
+                cpu: 100
+                memory: 90
+          storage:
+            builder:
+              size: 20480
+              storageClass: null
+            nfs:
+              storageClass: null
+            registry:
+              size: 20480
+              storageClass: null
+            sync:
+              size: 10240
+              storageClass: null
+          tlsCertificates: []
+          systemNodeSelector: {}
+          registryProxyTolerations: []
+          setupIngressController: nginx
+          namespace:
+            name: garden-demo-my-app
+          ingressClass: nginx
+          context: docker-desktop
+          defaultHostname: garden-demo.local.app.garden
+          ingressHttpPort: 80
+          ingressHttpsPort: 443
+      type: deployment
+    startedAt: '2022-07-18T09:18:13.395Z'
+    completedAt: '2022-07-18T09:18:16.710Z'
+    batchId: cf44f187-69bc-4f63-9707-e53c60e8dd6d
+    version: 0.12.32
+  resolve-provider.templated:
+    type: resolve-provider
+    key: resolve-provider.templated
+    name: templated
+    description: resolving provider templated
+    completedAt: '2022-07-18T09:18:13.394Z'
+    batchId: 6ff9a6b5-5bbe-47a4-8d72-cd588e96bed7
+    output:
+      name: templated
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: templated
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:18:13.383Z'
+messages:
+  - |-
+    - local-kubernetes: Unable to connect to Kubernetes cluster. Got error:
+
+    Error: self signed certificate in certificate chain
+
+
+[2022-07-18T09:19:14.268Z] Error: Unable to connect to Kubernetes cluster. Got error:
+
+Error: self signed certificate in certificate chain
+    at Object.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+    at Generator.throw (<anonymous>)
+    at rejected (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+
+Error Details:
+
+providerConfig:
+  name: local-kubernetes
+  environments:
+    - local
+    - dev
+    - staging
+    - prod
+  dependencies: []
+  buildMode: local-docker
+  deploymentStrategy: rolling
+  forceSsl: false
+  gardenSystemNamespace: garden-system
+  imagePullSecrets: []
+  resources:
+    builder:
+      limits:
+        cpu: 4000
+        memory: 8192
+      requests:
+        cpu: 100
+        memory: 512
+    registry:
+      limits:
+        cpu: 2000
+        memory: 4096
+      requests:
+        cpu: 200
+        memory: 512
+    sync:
+      limits:
+        cpu: 500
+        memory: 512
+      requests:
+        cpu: 100
+        memory: 90
+  storage:
+    builder:
+      size: 20480
+      storageClass: null
+    nfs:
+      storageClass: null
+    registry:
+      size: 20480
+      storageClass: null
+    sync:
+      size: 10240
+      storageClass: null
+  tlsCertificates: []
+  systemNodeSelector: {}
+  registryProxyTolerations: []
+  setupIngressController: nginx
+  namespace:
+    name: garden-demo-my-app
+  ingressClass: nginx
+  context: docker-desktop
+  defaultHostname: garden-demo.local.app.garden
+  ingressHttpPort: 80
+  ingressHttpsPort: 443
+
+
+[2022-07-18T09:19:14.278Z] Error: Failed resolving one or more providers:
+- local-kubernetes
+    at Garden.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at runNextTicks (internal/process/task_queues.js:62:5)
+    at processImmediate (internal/timers.js:429:9)
+    at process.topLevelDomainCallback (domain.js:137:15)
+
+Error Details:
+
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: templated
+  - name: local-kubernetes
+    environments:
+      - local
+      - dev
+      - staging
+      - prod
+    dependencies: []
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2022-07-18T09:19:11.107Z'
+    batchId: 6e8628a2-5575-48d5-8285-af4d29dff8d4
+    output:
+      name: exec
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: exec
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:19:11.088Z'
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2022-07-18T09:19:11.102Z'
+    batchId: 1640fea2-7050-4889-857a-51bbd8ac2ac3
+    output:
+      name: container
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: container
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:19:11.089Z'
+  resolve-provider.local-kubernetes:
+    type: resolve-provider
+    description: resolving provider local-kubernetes
+    key: resolve-provider.local-kubernetes
+    name: local-kubernetes
+    error:
+      detail:
+        providerConfig:
+          name: local-kubernetes
+          environments:
+            - local
+            - dev
+            - staging
+            - prod
+          dependencies: []
+          buildMode: local-docker
+          deploymentStrategy: rolling
+          forceSsl: false
+          gardenSystemNamespace: garden-system
+          imagePullSecrets: []
+          resources:
+            builder:
+              limits:
+                cpu: 4000
+                memory: 8192
+              requests:
+                cpu: 100
+                memory: 512
+            registry:
+              limits:
+                cpu: 2000
+                memory: 4096
+              requests:
+                cpu: 200
+                memory: 512
+            sync:
+              limits:
+                cpu: 500
+                memory: 512
+              requests:
+                cpu: 100
+                memory: 90
+          storage:
+            builder:
+              size: 20480
+              storageClass: null
+            nfs:
+              storageClass: null
+            registry:
+              size: 20480
+              storageClass: null
+            sync:
+              size: 10240
+              storageClass: null
+          tlsCertificates: []
+          systemNodeSelector: {}
+          registryProxyTolerations: []
+          setupIngressController: nginx
+          namespace:
+            name: garden-demo-my-app
+          ingressClass: nginx
+          context: docker-desktop
+          defaultHostname: garden-demo.local.app.garden
+          ingressHttpPort: 80
+          ingressHttpsPort: 443
+      type: deployment
+    startedAt: '2022-07-18T09:19:11.103Z'
+    completedAt: '2022-07-18T09:19:14.262Z'
+    batchId: 1640fea2-7050-4889-857a-51bbd8ac2ac3
+    version: 0.12.32
+  resolve-provider.templated:
+    type: resolve-provider
+    key: resolve-provider.templated
+    name: templated
+    description: resolving provider templated
+    completedAt: '2022-07-18T09:19:11.107Z'
+    batchId: af6b236b-acdb-4722-aa0c-6fc765a26f2f
+    output:
+      name: templated
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: templated
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:19:11.089Z'
+messages:
+  - |-
+    - local-kubernetes: Unable to connect to Kubernetes cluster. Got error:
+
+    Error: self signed certificate in certificate chain
+
+
+[2022-07-18T09:21:59.413Z] Error: Unable to connect to Kubernetes cluster. Got error:
+
+Error: self signed certificate in certificate chain
+    at Object.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+    at Generator.throw (<anonymous>)
+    at rejected (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+
+Error Details:
+
+providerConfig:
+  name: local-kubernetes
+  dependencies: []
+  buildMode: local-docker
+  deploymentStrategy: rolling
+  forceSsl: false
+  gardenSystemNamespace: garden-system
+  imagePullSecrets: []
+  resources:
+    builder:
+      limits:
+        cpu: 4000
+        memory: 8192
+      requests:
+        cpu: 100
+        memory: 512
+    registry:
+      limits:
+        cpu: 2000
+        memory: 4096
+      requests:
+        cpu: 200
+        memory: 512
+    sync:
+      limits:
+        cpu: 500
+        memory: 512
+      requests:
+        cpu: 100
+        memory: 90
+  storage:
+    builder:
+      size: 20480
+      storageClass: null
+    nfs:
+      storageClass: null
+    registry:
+      size: 20480
+      storageClass: null
+    sync:
+      size: 10240
+      storageClass: null
+  tlsCertificates: []
+  systemNodeSelector: {}
+  registryProxyTolerations: []
+  setupIngressController: nginx
+  namespace:
+    name: garden-demo-default
+  ingressClass: nginx
+  context: docker-desktop
+  defaultHostname: garden-demo.local.app.garden
+  ingressHttpPort: 80
+  ingressHttpsPort: 443
+
+
+[2022-07-18T09:21:59.426Z] Error: Failed resolving one or more providers:
+- local-kubernetes
+    at Garden.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at runNextTicks (internal/process/task_queues.js:62:5)
+    at processImmediate (internal/timers.js:429:9)
+    at process.topLevelDomainCallback (domain.js:137:15)
+
+Error Details:
+
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: templated
+  - name: local-kubernetes
+    dependencies: []
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2022-07-18T09:21:56.237Z'
+    batchId: f6053de5-1f96-4cb1-a145-6ebebe81afad
+    output:
+      name: exec
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: exec
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:21:56.220Z'
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2022-07-18T09:21:56.233Z'
+    batchId: 8293b635-68f9-46f5-9428-4bf5322eaa48
+    output:
+      name: container
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: container
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:21:56.222Z'
+  resolve-provider.local-kubernetes:
+    type: resolve-provider
+    description: resolving provider local-kubernetes
+    key: resolve-provider.local-kubernetes
+    name: local-kubernetes
+    error:
+      detail:
+        providerConfig:
+          name: local-kubernetes
+          dependencies: []
+          buildMode: local-docker
+          deploymentStrategy: rolling
+          forceSsl: false
+          gardenSystemNamespace: garden-system
+          imagePullSecrets: []
+          resources:
+            builder:
+              limits:
+                cpu: 4000
+                memory: 8192
+              requests:
+                cpu: 100
+                memory: 512
+            registry:
+              limits:
+                cpu: 2000
+                memory: 4096
+              requests:
+                cpu: 200
+                memory: 512
+            sync:
+              limits:
+                cpu: 500
+                memory: 512
+              requests:
+                cpu: 100
+                memory: 90
+          storage:
+            builder:
+              size: 20480
+              storageClass: null
+            nfs:
+              storageClass: null
+            registry:
+              size: 20480
+              storageClass: null
+            sync:
+              size: 10240
+              storageClass: null
+          tlsCertificates: []
+          systemNodeSelector: {}
+          registryProxyTolerations: []
+          setupIngressController: nginx
+          namespace:
+            name: garden-demo-default
+          ingressClass: nginx
+          context: docker-desktop
+          defaultHostname: garden-demo.local.app.garden
+          ingressHttpPort: 80
+          ingressHttpsPort: 443
+      type: deployment
+    startedAt: '2022-07-18T09:21:56.234Z'
+    completedAt: '2022-07-18T09:21:59.407Z'
+    batchId: 8293b635-68f9-46f5-9428-4bf5322eaa48
+    version: 0.12.32
+  resolve-provider.templated:
+    type: resolve-provider
+    key: resolve-provider.templated
+    name: templated
+    description: resolving provider templated
+    completedAt: '2022-07-18T09:21:56.237Z'
+    batchId: 88008c21-09d0-4546-94eb-bc86cf479e77
+    output:
+      name: templated
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: templated
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:21:56.222Z'
+messages:
+  - |-
+    - local-kubernetes: Unable to connect to Kubernetes cluster. Got error:
+
+    Error: self signed certificate in certificate chain
+
+
+[2022-07-18T09:22:29.591Z] Error: Unable to connect to Kubernetes cluster. Got error:
+
+Error: self signed certificate in certificate chain
+    at Object.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+    at Generator.throw (<anonymous>)
+    at rejected (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+
+Error Details:
+
+providerConfig:
+  name: local-kubernetes
+  dependencies: []
+  buildMode: local-docker
+  deploymentStrategy: rolling
+  forceSsl: false
+  gardenSystemNamespace: garden-system
+  imagePullSecrets: []
+  resources:
+    builder:
+      limits:
+        cpu: 4000
+        memory: 8192
+      requests:
+        cpu: 100
+        memory: 512
+    registry:
+      limits:
+        cpu: 2000
+        memory: 4096
+      requests:
+        cpu: 200
+        memory: 512
+    sync:
+      limits:
+        cpu: 500
+        memory: 512
+      requests:
+        cpu: 100
+        memory: 90
+  storage:
+    builder:
+      size: 20480
+      storageClass: null
+    nfs:
+      storageClass: null
+    registry:
+      size: 20480
+      storageClass: null
+    sync:
+      size: 10240
+      storageClass: null
+  tlsCertificates: []
+  systemNodeSelector: {}
+  registryProxyTolerations: []
+  setupIngressController: nginx
+  namespace:
+    name: garden-demo-default
+  ingressClass: nginx
+  context: docker-desktop
+  defaultHostname: garden-demo.local.app.garden
+  ingressHttpPort: 80
+  ingressHttpsPort: 443
+
+
+[2022-07-18T09:22:29.600Z] Error: Failed resolving one or more providers:
+- local-kubernetes
+    at Garden.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at runNextTicks (internal/process/task_queues.js:62:5)
+    at processImmediate (internal/timers.js:429:9)
+    at process.topLevelDomainCallback (domain.js:137:15)
+
+Error Details:
+
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: templated
+  - name: local-kubernetes
+    dependencies: []
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2022-07-18T09:22:26.483Z'
+    batchId: dfbcb7e2-edd5-4d5b-83f3-7b4b61e5e5e1
+    output:
+      name: exec
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: exec
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:22:26.469Z'
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2022-07-18T09:22:26.484Z'
+    batchId: d4c596a0-3e3d-4ba0-ad10-8c743ba8088d
+    output:
+      name: container
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: container
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:22:26.470Z'
+  resolve-provider.local-kubernetes:
+    type: resolve-provider
+    description: resolving provider local-kubernetes
+    key: resolve-provider.local-kubernetes
+    name: local-kubernetes
+    error:
+      detail:
+        providerConfig:
+          name: local-kubernetes
+          dependencies: []
+          buildMode: local-docker
+          deploymentStrategy: rolling
+          forceSsl: false
+          gardenSystemNamespace: garden-system
+          imagePullSecrets: []
+          resources:
+            builder:
+              limits:
+                cpu: 4000
+                memory: 8192
+              requests:
+                cpu: 100
+                memory: 512
+            registry:
+              limits:
+                cpu: 2000
+                memory: 4096
+              requests:
+                cpu: 200
+                memory: 512
+            sync:
+              limits:
+                cpu: 500
+                memory: 512
+              requests:
+                cpu: 100
+                memory: 90
+          storage:
+            builder:
+              size: 20480
+              storageClass: null
+            nfs:
+              storageClass: null
+            registry:
+              size: 20480
+              storageClass: null
+            sync:
+              size: 10240
+              storageClass: null
+          tlsCertificates: []
+          systemNodeSelector: {}
+          registryProxyTolerations: []
+          setupIngressController: nginx
+          namespace:
+            name: garden-demo-default
+          ingressClass: nginx
+          context: docker-desktop
+          defaultHostname: garden-demo.local.app.garden
+          ingressHttpPort: 80
+          ingressHttpsPort: 443
+      type: deployment
+    startedAt: '2022-07-18T09:22:26.484Z'
+    completedAt: '2022-07-18T09:22:29.585Z'
+    batchId: d4c596a0-3e3d-4ba0-ad10-8c743ba8088d
+    version: 0.12.32
+  resolve-provider.templated:
+    type: resolve-provider
+    key: resolve-provider.templated
+    name: templated
+    description: resolving provider templated
+    completedAt: '2022-07-18T09:22:26.483Z'
+    batchId: ca5996cf-5100-44bb-8aa2-ffcc08378091
+    output:
+      name: templated
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: templated
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:22:26.471Z'
+messages:
+  - |-
+    - local-kubernetes: Unable to connect to Kubernetes cluster. Got error:
+
+    Error: self signed certificate in certificate chain
+
+
+[2022-07-18T09:22:44.525Z] Error: Unable to connect to Kubernetes cluster. Got error:
+
+Error: self signed certificate in certificate chain
+    at Object.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+    at Generator.throw (<anonymous>)
+    at rejected (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/plugins/kubernetes/namespace.js:0)
+
+Error Details:
+
+providerConfig:
+  name: local-kubernetes
+  dependencies: []
+  buildMode: local-docker
+  deploymentStrategy: rolling
+  forceSsl: false
+  gardenSystemNamespace: garden-system
+  imagePullSecrets: []
+  resources:
+    builder:
+      limits:
+        cpu: 4000
+        memory: 8192
+      requests:
+        cpu: 100
+        memory: 512
+    registry:
+      limits:
+        cpu: 2000
+        memory: 4096
+      requests:
+        cpu: 200
+        memory: 512
+    sync:
+      limits:
+        cpu: 500
+        memory: 512
+      requests:
+        cpu: 100
+        memory: 90
+  storage:
+    builder:
+      size: 20480
+      storageClass: null
+    nfs:
+      storageClass: null
+    registry:
+      size: 20480
+      storageClass: null
+    sync:
+      size: 10240
+      storageClass: null
+  tlsCertificates: []
+  systemNodeSelector: {}
+  registryProxyTolerations: []
+  setupIngressController: nginx
+  namespace:
+    name: garden-demo-default
+  ingressClass: nginx
+  context: docker-desktop
+  defaultHostname: garden-demo.local.app.garden
+  ingressHttpPort: 80
+  ingressHttpsPort: 443
+
+
+[2022-07-18T09:22:44.536Z] Error: Failed resolving one or more providers:
+- local-kubernetes
+    at Garden.<anonymous> (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/build/src/garden.js:0)
+    at runNextTicks (internal/process/task_queues.js:62:5)
+    at processImmediate (internal/timers.js:429:9)
+    at process.topLevelDomainCallback (domain.js:137:15)
+
+Error Details:
+
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: templated
+  - name: local-kubernetes
+    dependencies: []
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2022-07-18T09:22:41.381Z'
+    batchId: b8944b5c-4f1b-4204-9d11-749ad8604883
+    output:
+      name: exec
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: exec
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:22:41.373Z'
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2022-07-18T09:22:41.382Z'
+    batchId: dac2fc2a-f47c-4da8-8024-2cac88788052
+    output:
+      name: container
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: container
+        dependencies: []
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:22:41.374Z'
+  resolve-provider.local-kubernetes:
+    type: resolve-provider
+    description: resolving provider local-kubernetes
+    key: resolve-provider.local-kubernetes
+    name: local-kubernetes
+    error:
+      detail:
+        providerConfig:
+          name: local-kubernetes
+          dependencies: []
+          buildMode: local-docker
+          deploymentStrategy: rolling
+          forceSsl: false
+          gardenSystemNamespace: garden-system
+          imagePullSecrets: []
+          resources:
+            builder:
+              limits:
+                cpu: 4000
+                memory: 8192
+              requests:
+                cpu: 100
+                memory: 512
+            registry:
+              limits:
+                cpu: 2000
+                memory: 4096
+              requests:
+                cpu: 200
+                memory: 512
+            sync:
+              limits:
+                cpu: 500
+                memory: 512
+              requests:
+                cpu: 100
+                memory: 90
+          storage:
+            builder:
+              size: 20480
+              storageClass: null
+            nfs:
+              storageClass: null
+            registry:
+              size: 20480
+              storageClass: null
+            sync:
+              size: 10240
+              storageClass: null
+          tlsCertificates: []
+          systemNodeSelector: {}
+          registryProxyTolerations: []
+          setupIngressController: nginx
+          namespace:
+            name: garden-demo-default
+          ingressClass: nginx
+          context: docker-desktop
+          defaultHostname: garden-demo.local.app.garden
+          ingressHttpPort: 80
+          ingressHttpsPort: 443
+      type: deployment
+    startedAt: '2022-07-18T09:22:41.382Z'
+    completedAt: '2022-07-18T09:22:44.518Z'
+    batchId: dac2fc2a-f47c-4da8-8024-2cac88788052
+    version: 0.12.32
+  resolve-provider.templated:
+    type: resolve-provider
+    key: resolve-provider.templated
+    name: templated
+    description: resolving provider templated
+    completedAt: '2022-07-18T09:22:41.382Z'
+    batchId: 88711bcb-cda4-422c-ba74-dd312c3330c2
+    output:
+      name: templated
+      dependencies: {}
+      moduleConfigs: []
+      config:
+        name: templated
+        path: /Users/vfarcic/code/garden-demo
+      status:
+        ready: true
+        outputs: {}
+        cached: true
+      dashboardPages: []
+    dependencyResults: {}
+    version: 0.12.32
+    startedAt: '2022-07-18T09:22:41.375Z'
+messages:
+  - |-
+    - local-kubernetes: Unable to connect to Kubernetes cluster. Got error:
+
+    Error: self signed certificate in certificate chain
+
+
+[2022-07-18T09:45:35.469Z] Error: Error validating module (garden.yml): key .name with value "garden-demo" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/
+    at validateSchema (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/config/validation.ts:134:11)
+    at validateWithPath (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/config/validation.ts:80:13)
+    at prepareModuleResource (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/config/base.ts:187:19)
+    at prepareResource (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/config/base.ts:120:12)
+    at /snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/config/base.ts:80:25
+    at Array.map (<anonymous>)
+    at loadConfigResources (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/config/base.ts:80:14)
+    at findProjectConfig (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/config/base.ts:224:25)
+    at CreateModuleCommand.action (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/commands/create/create-module.ts:217:27)
+    at GardenCli.runCommand (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/cli/cli.ts:508:20)
+    at GardenCli.run (/snapshot/project/tmp/pkg/cli/node_modules/@garden-io/core/src/cli/cli.ts:670:26)
+    at Object.runCli (/snapshot/project/tmp/pkg/cli/src/cli.ts:41:14)
+
+Error Details:
+
+value:
+  apiVersion: garden.io/v0
+  kind: Module
+  build:
+    dependencies: []
+  configPath: /Users/vfarcic/code/garden-demo/garden.yml
+  name: garden-demo
+  path: /Users/vfarcic/code/garden-demo
+  serviceConfigs: []
+  spec:
+    dockerfile: Dockerfile
+    build:
+      dependencies: []
+  testConfigs: []
+  type: container
+  taskConfigs: []
+context: module (garden.yml)
+errorDescription: "key \e[4m.name\e[24m with value \"garden-demo\" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/"
+errorDetails:
+  - message: "key \e[4m.name\e[24m with value \"garden-demo\" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/"
+    path:
+      - name
+    type: string.pattern.base
+    context:
+      regex: {}
+      value: garden-demo
+      label: name
+      key: name
+
