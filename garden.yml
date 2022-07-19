@@ -1,4 +1,14 @@
 kind: Module
 type: container
-name: app
-dockerfile: Dockerfile
+name: silly-demo
+services:
+- name: backend
+  replicas: ${var.service-replicas}
+  ports:
+  - name: http
+    containerPort: 8080
+    servicePort: 8080
+  healthCheck:  
+    httpGet:
+      path: /
+      port: http

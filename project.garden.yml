@@ -26,4 +26,6 @@ providers:
 - name: local-kubernetes
   environments: ["local", "dev", "staging", "prod"]
   setupIngressController: false
-
+  buildMode: kaniko
+  kaniko:
+    namespace: null
