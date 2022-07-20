@@ -2,23 +2,23 @@ kind: Project
 name: garden-demo
 defaultEnvironment: local
 variables:
-  service-replicas: 3
-  service-hostname: garden-demo.acme.com
+  replicas: 3
+  hostname: garden-demo.acme.com
 environments:
 - name: local
   defaultNamespace: my-app
   variables:
-    service-replicas: 1
-    service-hostname: garden-demo.127.0.0.1.nip.io
+    replicas: 1
+    hostname: garden-demo.127.0.0.1.nip.io
 - name: dev
   defaultNamespace: ${local.username}
   variables:
-    service-replicas: 1
-    service-hostname: ${local.username}.garden-demo.acme.com
+    replicas: 1
+    hostname: ${local.username}.garden-demo.acme.com
 - name: staging
   production: true
   defaultNamespace: staging
-  service-hostname: staging.garden-demo.acme.com
+  hostname: staging.garden-demo.acme.com
 - name: prod
   production: true
   defaultNamespace: production
@@ -26,6 +26,6 @@ providers:
 - name: local-kubernetes
   environments: ["local", "dev", "staging", "prod"]
   setupIngressController: false
-  buildMode: kaniko
-  kaniko:
-    namespace: null
+  # buildMode: kaniko
+  # kaniko:
+  #   namespace: null
