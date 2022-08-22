@@ -16,3 +16,8 @@ services:
     httpGet:
       path: /
       port: http
+tests:
+- name: unit
+  args: [echo, "I'm faking unit tests"]
+- name: integ
+  args: [echo, "I'm faking integration tests"]
